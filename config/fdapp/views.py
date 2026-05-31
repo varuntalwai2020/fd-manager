@@ -5,6 +5,8 @@ from datetime import date, timedelta
 from django.db.models import Avg
 from django.http import HttpResponse
 from openpyxl import Workbook
+from django.core.mail import send_mail
+
 
 def dashboard(request):
 
@@ -161,3 +163,16 @@ def export_excel(request):
     wb.save(response)
 
     return response
+def test_email(request):
+    try:
+        send_mail(
+            "FD Test Email",
+            "If you received this email, SMTP is working.",
+            "varuntalwai2020@gmail.com",
+            ["varuntalwai2020@gmail.com"],
+             fail_silently=False,
+        )
+        return HttpResponse("Mail Sent Successfully")
+    except Exception as e:
+        return HttpResponse(f"Mail Error: {e}")
+             

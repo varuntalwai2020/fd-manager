@@ -14,5 +14,6 @@ urlpatterns = [
     path('delete/<int:id>/', delete_fd, name='delete_fd'),
     path('mis/', mis_report, name='mis_report'),
     path('export/excel/', export_excel, name='export_excel'),
+    path('testmail/', views.test_email),
     
 ]
