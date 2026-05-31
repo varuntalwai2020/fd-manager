@@ -19,6 +19,13 @@ class FD(models.Model):
     start_date = models.DateField()
     maturity_date = models.DateField()
 
+    # Reminder tracking
+    reminder_30_sent = models.BooleanField(default=False)
+    reminder_15_sent = models.BooleanField(default=False)
+    reminder_7_sent = models.BooleanField(default=False)
+    reminder_1_sent = models.BooleanField(default=False)
+    reminder_0_sent = models.BooleanField(default=False)
+
     def __str__(self):
         return self.customer_name
 
