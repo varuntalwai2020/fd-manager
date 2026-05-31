@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add FD</title>
+</head>
+<body>
+
+<h1>Add / Edit FD</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit">
+        Save FD
+    </button>
+</form>
+
+<br>
+
+<a href="/">Back to Dashboard</a>
+
+</body>
+</html>

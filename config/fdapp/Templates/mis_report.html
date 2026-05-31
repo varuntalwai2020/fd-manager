@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MIS Report</title>
+    
+</head>
+<body>
+
+<h1>FD MIS Report</h1>
+
+<table border="1" cellpadding="10">
+
+<tr>
+    <th>Particulars</th>
+    <th>Value</th>
+</tr>
+
+<tr>
+    <td>Total FDs</td>
+    <td>{{ total_fds }}</td>
+</tr>
+
+<tr>
+    <td>Total Investment</td>
+    <td>₹{{ total_investment }}</td>
+</tr>
+
+<tr>
+    <td>Total Maturity Value</td>
+    <td>₹{{ total_maturity }}</td>
+</tr>
+
+<tr>
+    <td>Total Interest Earned</td>
+    <td>₹{{ interest_earned }}</td>
+</tr>
+
+<tr>
+    <td>Matured FDs</td>
+    <td>{{ matured }}</td>
+</tr>
+
+<tr>
+    <td>Maturing In Next 30 Days</td>
+    <td>{{ upcoming }}</td>
+</tr>
+
+<tr>
+    <td>Average Interest Rate</td>
+    <td>{{ avg_interest }}%</td>
+</tr>
+
+</table>
+
+<br><br>
+
+<a href="/">Back To Dashboard</a>
+
+</body>
+</html>
