@@ -7,6 +7,5 @@ class FdappConfig(AppConfig):
     name = 'fdapp'
 
     def ready(self):
-        if os.environ.get('RUN_MAIN') == 'true':
             from .scheduler import start
             start()
