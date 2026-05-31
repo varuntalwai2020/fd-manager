@@ -163,16 +163,21 @@ def export_excel(request):
     wb.save(response)
 
     return response
+from django.core.mail import send_mail
+from django.http import HttpResponse
+
+
 def test_email(request):
     try:
         send_mail(
-            "FD Test Email",
-            "If you received this email, SMTP is working.",
-            "varuntalwai2020@gmail.com",
-            ["varuntalwai2020@gmail.com"],
-             fail_silently=False,
+            subject="FD Test Email",
+            message="If you received this email, SMTP is working correctly.",
+            from_email="varuntalwai2020@gmail.com",
+            recipient_list=["varuntalwai2020@gmail.com"],
+            fail_silently=False,
         )
+
         return HttpResponse("Mail Sent Successfully")
+
     except Exception as e:
-        return HttpResponse(f"Mail Error: {e}")
-             
+        return HttpResponse(f"Mail Error: {str(e)}")
