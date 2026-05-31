@@ -1,11 +1,23 @@
-# scheduler.py
-
 from apscheduler.schedulers.background import BackgroundScheduler
 from .reminder import check_fd_maturity
 
-def start():
-    print("=== SCHEDULER STARTED ===")
+scheduler = BackgroundScheduler()
 
-    scheduler = BackgroundScheduler()
-    scheduler.add_job(check_fd_maturity, 'interval', minutes=1)
+def start():
+
+    if scheduler.running:
+        return
+
+    scheduler.add_job(
+        check_fd_maturity,
+        'interval',
+        minutes=1,
+        id='check_fd_maturity',
+        replace_existing=True,
+        max_instances=1,
+        coalesce=True
+    )
+
     scheduler.start()
+
+    print("=== SCHEDULER STARTED ===")

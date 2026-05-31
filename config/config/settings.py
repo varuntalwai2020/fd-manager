@@ -135,3 +135,4 @@ EMAIL_USE_TLS = True
 
 EMAIL_HOST_USER = 'varuntalwai2020@gmail.com'
 EMAIL_HOST_PASSWORD = 'tvneifackffmjfje'
+EMAIL_TIMEOUT = 20
