@@ -12,7 +12,9 @@ def check_fd_maturity():
     print("Total FDs:", fds.count())
 
     for fd in fds:
+        print("PROCESSING:", fd.customer_name)
         days_left = (fd.maturity_date - today).days
+        print("DAYS LEFT =", days_left)
 
         print(
             f"Customer={fd.customer_name}, "
